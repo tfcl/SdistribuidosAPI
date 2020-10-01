@@ -40,4 +40,4 @@ mongoose.connect(
 
 
 // how do we start listening to the server
-app.listen(3000)
+//app.listen(3000)
