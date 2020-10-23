@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="MorganBig Bold">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="camoes.css">
+  <title>Luis de Camões</title>
+</head>
+
+<body>
+  <div id="banner" class="">
+    <div class="row justify-content-center ">
+      <img class="align-center my-3 mr-5" src="imgs/logo.png" alt="">
+      <div class="d-flex align-items-start flex-column align-self-center ml-4" style="" >
+        <h2 class="m-0"><span class="redFont">C</span>atálogo da biblioteca</h2>
+        <div class="d-flex align-items-end flex-column   ">
+          <h2 class="m-0 "><span class="redFont">C</span>entro de <span class="redFont">C</span>amões</h1>
+            <p class="m-0 flex-end" style="color: #009900;">Lublin</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <nav id="mainNavbar" class="navbar navbar-expand-lg  py-0 px-5">
+    <a href="/" style="width: 60px;text-align: center;" class="navbar-brand bg-light px-2 py-0 rounded-circle"><span class="redFont">C</span> </a>
+    <div class="navbar-nav">
+      
+      <a class="nav-item nav-link" style="text-align:center;" href="requisitarPrototipo.html">Requisitar<i class="fas fa-book"></i></a>
+      <a class="nav-item nav-link " href="#" style="text-align:center;">Gestor <i class="fas fa-cogs"></i></a>
+      
+    </div>
+    <div class=" ml-5 container justify-content-start ">
+      <button  class="btn btn-outline-danger border border-white rounded-0 dropdown-toggle wrn-btn text-white" type="button" id="dropdownMenuButton"   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Palavra-chave
+      </button>
+      
+
+             
+              <form class="form-check form-check-inline" method="GET">
+                
+                <input type="text" class="form-control search-slt rounded-0" name="id" placeholder="Pesquisa por id">
+                <input type="submit" value="Pesquisar" class="btn btn-danger wrn-btn rounded-right rounded-0"></input>
+              </form>
+              <a class="text-white" href="#"><b>Pesquisa avançada</b></a> 
+        </div>
+  
+  
+    <div class="navbar-nav ml-autoe">
+
+      <a class="nav-item nav-link " href="/books/insert">Inserir</i></a>
+      <a class="nav-item nav-link " href="/books/available/true">Ver Disponiveis</i></a>
+      <a class="nav-item nav-link " href="/books/available/false">Ver Indisponiveis</i></a>
+      <a class="nav-item nav-link " href="/books">Ver Todos</i></a>
+    </div>
+  </nav>
+  
+  <div class="container">
+    
+ 
+      <div id="mainPage" class="">
+        <a class="btn"href=Inserir> </a>  
+
+        
+          <div class="card border border-danger mb-3 flex-row flex-wrap " >
+            <div class="card-header text-center border-0 d-flex align-items-center justify-content-center " style="width: 130px; ">
+              <p style="text-align:center;font-size: 20px;"><i class="fas fa-book fa-lg align-middle inline "style="color:#b30000;"></i></p>
+              <!-- <img src="//placehold.it/200" alt=""> -->
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"><%= book.title %>, <%= book.id %></h5>
+              <h6 class="card-subtitle mb-2 text-muted">
+              
+              
+              
+              
+              
+            </h6>
+  
+              <div class="row " >
+                <div class="col" style="max-width: 100px;" >
+              <h7 class="card-text mb-2 text-muted "><span class="font-weight-bold" style="color:#b30000;">ISBN: </span></h7>
+              <h7 class="card-text mb-2 text-muted "><span class="font-weight-bold" style="color:#b30000;">Estado:</span></h7>   
+              
+                </div>
+                <div class="col pl-0">
+                  <h7 class="card-text mb-2 text-muted "><%= book.isbn %>, 
+                 
+                  <h6 class="card-text mb-2 text-muted "><%= book.isAvailable %></h6>
+  
+                </div>
+                
+              </div>
+              
+            </div>
+          <div>
+            <form action="/books/<%= book.id %>?_method=DELETE" method="post">
+              <input type="submit" name="_method" value="DELETE">
+              </form>
+              <form action="/books/edit" method="get">
+                <input type="hidden" name="id" value="<%= book.id %>">
+                <input type="submit" value="EDIT">
+                </form>
+          </div>
+          </div>
+
+      
+
+     
+
+    </div>
+  </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
